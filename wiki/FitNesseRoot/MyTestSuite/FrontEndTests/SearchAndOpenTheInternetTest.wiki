@@ -1,0 +1,11 @@
+|script|browser test                      |
+|open  |https://google.nl                 |
+|wait  |1         |seconds                |
+|type  |${theInternet}                    |
+|press |enter                             |
+|click |The Internet                      |
+|ensure|is Visible|Welcome to the-internet|
+
+
+
+|comment|click|xpath=|

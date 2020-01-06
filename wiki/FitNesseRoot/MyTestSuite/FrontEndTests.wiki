@@ -1,7 +1,12 @@
 ---
-Suite
 Help: Suite for tests on using a browser (with Selenium)
+Suite
 ---
 !contents -R2 -g -p -f -h
 
 Samples for testing a web application can be found at .HsacExamples.SlimTests.BrowserTests.
+
+!*> saved variables
+!define theInternet {!-the internet herokuapp-!}
+!define theInternetHomePageUrl {!-https://the-internet.herokuapp.com/-!}
+*!

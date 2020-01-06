@@ -1,0 +1,16 @@
+|table template|login details                |
+|open          |${theInternetHomePageUrl}    |
+|click         |Form Authentication          |
+|enter         |@{username}    |as |Username |
+|enter         |@{password}    |as |Password |
+|click         |Login                        |
+|show          |take screenshot|error message|
+
+|script|browser test|
+
+!|login details               |
+|username|password            |
+|tomsmith|SuperSecretPassword!|
+|tomsmith|WrongPassword!      |
+|tomwrong|WrongPassword!      |
+
