@@ -1,0 +1,38 @@
+!*****>  !-FitNesse SetUp-!
+|script                     |map fixture                                                                                                                                                       |
+|set value                  |firefox                                                                                                                            |for|browserName               |
+|set value                  |${FITNESSE_PORT}                                                                                                                   |for|version                   |
+|${normalSetUp}set value    |--disable-extentions                                                                                                               |for|goog:chromeOptions.args[0]|
+|${normalSetUp}set value    |--lang="en-US"                                                                                                                     |for|goog:chromeOptions.args[1]|
+|${normalSetUp}set value    |--start-maximized                                                                                                                  |for|goog:chromeOptions.args[2]|
+|${normalSetUp}set value    |--disable-extentions                                                                                                               |for|goog:chromeOptions.args[0]|
+|${TagetikSetUp}set value   |--lang="en-US"                                                                                                                     |for|goog:chromeOptions.args[1]|
+|${TagetikSetUp}set value   |--window-size=640,480                                                                                                              |for|goog:chromeOptions.args[2]|
+|${azureDevOpsOnly}set value|--proxy-server=!-http://peopleproxy.ins.local:80-!                                                                                 |for|goog:chromeOptions.args[3]|
+|${azureDevOpsOnly}set value|--proxy-bypass-list=sts.vivat.nl;*.local;*.srg,vivat*.pegacloud.io                                                                 |for|goog:chromeOptions.args[4]|
+|${azureDevOpsOnly}set value|disable-gpu                                                                                                                        |for|goog:chromeOptions.args[5]|
+|${azureDevOpsOnly}set value|headless                                                                                                                           |for|goog:chromeOptions.args[6]|
+|${azureDevOpsOnly}set value|--window-size=1920,1200                                                                                                            |for|goog:chromeOptions.args[7]|
+|${azureDevOpsOnly}set value|--user-agent=!-Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.40 Safari/537.36-!|for|goog:chromeOptions.args[8]|
+|$chromesetup=              |copy map                                                                                                                                                          |
+ 
+|script              |selenium driver setup                     |
+|connect to driver at|${GRID_HUB}|with capabilities|$chromesetup|
+|show                |driver description                        |
+ 
+|library                    |
+|stop test fixture          |
+|string fixture             |
+|browser test               |
+|pdf fixture                |
+|cmd fixture                |
+|echo fixture               |
+|compare fixture            |
+|file fixture               |
+|fitnesse.slim.test.TestSlim|
+|date format fixture        |
+|map fixture                |
+ 
+|script                                   |
+|seconds before timeout|${default_timeout}|
+**********!

@@ -14,3 +14,9 @@ Stopping the browser is done in SuiteTearDown, which is done after all tests in 
 |script          |selenium driver setup|
 |start driver for|chrome               |
 |show            |driver description   |
+
+|library     |
+|browser test|
+
+|script                     |
+|set browser size to maximum|

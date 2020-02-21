@@ -1,0 +1,37 @@
+---
+Help: Shows the use of scenarios.
+Test
+---
+1. Scenario with parameters.
+1.1 Script that checks for succesfull login notification.
+!| script                                                        |
+|Login with username|tomsmith  |and password|SuperSecretPassword!|
+|ensure             |is Visible|You logged into a secure area!   |
+
+2. Scenario without parameters.
+2.1 Script that downloads a file
+|script       |
+|Download file|
+
+3. Scenario with a Table Template.
+3.1 Table template that checks for invalid username notification.
+|table template           |Login details wrong username                                                    |
+|Login and take screenshot|invalid username notification|with username|@{username}|and password|@{password}|
+|ensure                   |is Visible                   |Your username is invalid!                         |
+
+3.2 Table template that checks for invalid password notification.
+|table template           |Login details wrong password                                                    |
+|Login and take screenshot|invalid password notification|with username|@{username}|and password|@{password}|
+|ensure                   |is Visible                   |Your password is invalid!                         |
+
+3.3 Parameters that the table template will use.
+!|Login details wrong password |
+|username|password             |
+|tomsmith|WrongPassword!       |
+|tomsmith|SuperSecretPassword1!|
+
+!|Login details wrong username     |
+|username     |password            |
+|tomsmithwrong|SuperSecretPassword!|
+|tomsmith23   |SuperSecretPassword!|
+

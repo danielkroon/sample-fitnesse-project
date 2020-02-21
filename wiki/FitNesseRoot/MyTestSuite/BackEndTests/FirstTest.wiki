@@ -1,8 +1,11 @@
+---
+Help: Boilerplate script test.
+---
 Boilerplate service test, customize to your heart's desire.
 
 |script         |xml http test                                                       |
 |set value      |90210          |for                  |ZIP                           |
-|get from       |http://wsf.cdyne.com/WeatherWS/Weather.asmx/GetCityWeatherByZIP                                          |
+|get from       |http://wsf.cdyne.com/WeatherWS/Weather.asmx/GetCityWeatherByZIP     |
 |check          |response status|200                                                 |
 |show           |request                                                             |
 |show           |response                                                            |

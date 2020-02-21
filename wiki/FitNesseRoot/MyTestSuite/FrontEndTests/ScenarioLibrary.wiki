@@ -1,0 +1,21 @@
+---
+Test
+---
+!1 Login scenario with parameters
+|scenario|Login with username|username|and password|password|
+|set browser size to maximum                                |
+|open    |https://the-internet.herokuapp.com/login          |
+|enter   |@{username}        |as      |id=username          |
+|enter   |@{password}        |as      |id=password          |
+|click   |Login                                             |
+
+!2 Login and take screenshot scenario and use another scenario
+|scenario           |Login and take screenshot|screenshotName|with username|username|and password|password|
+|Login with username|@{username}              |and password  |@{password}                                 |
+|show               |take screenshot          |@{screenshotName}                                          |
+
+!3 Download a file
+|scenario|Download file                    |
+|open    |${theInternetHomePageUrl}        |
+|click   |xpath=//a[text()="File Download"]|
+

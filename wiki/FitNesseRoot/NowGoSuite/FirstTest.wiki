@@ -1,0 +1,6 @@
+---
+Help: Boilerplate script test.
+---
+|script|
+|open  |https://www.nowgo.com/                          |
+

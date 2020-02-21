@@ -1,1 +1,9 @@
 !contents
+
+!path fixtures
+!path fixtures/*.jar
+!define GRID_HUB {http://localhost:4444/wd/hub}
+!define azureDevOpsOnly {!-#-!}
+!define normalSetUp {!--!}
+!define TagetikSetUp {!-#-!}
+!define TEST_SYSTEM {slim}
